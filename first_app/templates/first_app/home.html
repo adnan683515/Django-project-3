@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>This is first app home page</h3>
+
+    <h1>Author:{{name}}</h1>
+    <h2>Age:{{age}}</h2>
+    <h1>Weigth:{{weigth}}</h1>
+    <h2>lst:{{lst}}</h2>
+
+
+    {% comment %} Conditional statement {% endcomment %}
+
+    {% if age > 20 %}
+        <p>You will get driving license</p>
+    {% elif age >=  10 and age <= 19 %}
+        <h1>You will not get dirving license</h1>
+    {% else %} 
+        <h4>Your are a child </h4>
+    {% endif %}
+
+
+    {% comment %} for loop {% endcomment %}
+    {% for i in courses %}
+    <h2>{{i.id}} {{i.course}} {{i.fee}}</h2>
+    {% endfor %}
+
+
+    {% comment %} join: {% endcomment %}
+
+    <h2>{{lst}}</h2>
+
+    <h2>{{ lst | join:" " }} </h2>
+
+
+    <h2>{{date_time | date:"D d M Y" }}</h2>
+
+    <h2>{{ date_time |date:"SHORT_DATE_FORMAT" }}</h2>
+
+
+    <h2>{{val}}</h2>
+
+
+    <h2>{{num}}</h2>
+
+    <h2>{{name | capfirst }} </h2>
+
+    <h2>{{name | cut:" " }} </h2>
+
+    <h3> {{ courses | dictsort:"id"}}</h3>
+
+
+        <h3>{{ lst | first }}</h3>
+        <h2>{{ lst | last }} </h2>
+
+        <h2>{{ lst | length }} </h2>
+        <h3>{{ name | lower}}</h3>
+
+        <h3>{{ lst | slice:"2:3"}}</h3>
+
+        <h2> {{ "happy coding. Pthon is funny language" | truncatechars:8 }}.</h2>
+
+
+        {% comment %} {% for val in courses%}
+        <h1>hello</h1>
+        {% endfor %} {% endcomment %}
+
+        <h1>{{courses}}</h1>
+
+        <h1>{{date_time}}</h1>
+
+        <h1>{{ courses | length }}</h1>
+
+</body>
+</html>
